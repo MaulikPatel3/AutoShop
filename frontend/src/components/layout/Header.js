@@ -25,7 +25,7 @@ const Header = () => {
         <Fragment>
             <nav className="navbar row">
                 <div className="col-12 col-md-3">
-                    <div className="navbar-brand">
+                    <div className="navbar-brand mx-3">
                         <Link to="/">
                             <img src="./Images/logo.png" />
                         </Link>

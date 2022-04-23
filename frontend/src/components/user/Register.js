@@ -28,7 +28,6 @@ const Register = ({ history }) => {
 
         if (isAuthenticated) {
             history.push('/')
-            
         }
        
 

@@ -9,6 +9,7 @@ const dotenv = require('dotenv');
 
 const errorMiddleware = require('./middlewares/errors')
 
+
 //setting up  config file
 dotenv.config({ path: 'backend/config/config.env' })
 

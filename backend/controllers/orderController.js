@@ -1,3 +1,4 @@
+
 const Order = require('../models/order');
 const Product = require('../models/product');
 
@@ -10,7 +11,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
         orderItems,
         shippingInfo,
         itemsPrice,
-      //  taxPrice,
+
         shippingPrice,
         totalPrice,
         paymentInfo
@@ -21,7 +22,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
         orderItems,
         shippingInfo,
         itemsPrice,
-        // taxPrice,
+
         shippingPrice,
         totalPrice,
         paymentInfo,
@@ -34,6 +35,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
         order
     })
 })
+
 
 // Get single order   =>   /api/v1/order/:id
 exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
@@ -59,6 +61,7 @@ exports.myOrders = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
+
 // Get all orders - ADMIN  =>   /api/v1/admin/orders/
 exports.allOrders = catchAsyncErrors(async (req, res, next) => {
     const orders = await Order.find()
@@ -82,8 +85,8 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
 
     if (order.orderStatus === 'Delivered') {
         return next(new ErrorHandler('You have already delivered this order', 400))
+    
     }
-
     order.orderItems.forEach(async item => {
         await updateStock(item.product, item.quantity)
     })
@@ -96,15 +99,18 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
         success: true,
     })
-})
 
+})
 async function updateStock(id, quantity) {
     const product = await Product.findById(id);
 
+
     product.stock = product.stock - quantity;
 
-    await product.save({validateBeforeSave: false})
+    await product.save({ validateBeforeSave: false })
 }
+
+
 
 // Delete order   =>   /api/v1/admin/order/:id
 exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
@@ -114,7 +120,7 @@ exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('No Order found with this ID', 404))
     }
 
-    await order.deleteOne()
+    await order.remove()
 
     res.status(200).json({
         success: true

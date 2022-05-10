@@ -42,7 +42,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('Please enter email & password', 400))
     }
 
-    // Finding user in database
+
     const user = await User.findOne({ email }).select('+password')
 
     if (!user) {
@@ -60,6 +60,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 
 })
 
+
 // Forgot Password   =>  /api/v1/password/forgot
 exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
@@ -73,9 +74,9 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
     const resetToken = user.getResetPasswordToken();
 
     await user.save({ validateBeforeSave: false });
-     
-     // Create reset password url
-    const resetUrl = `${req.protocol}://${req.get('host')}/api/v1/password/reset/${resetToken}`;
+
+    // Create reset password url
+    const resetUrl = `${req.protocol}://${req.get('host')}/password/reset/${resetToken}`;
 
     const message = `Your password reset token is as follow:\n\n${resetUrl}\n\nIf you have not requested this email, then ignore it.`
 
@@ -96,34 +97,23 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
         user.resetPasswordToken = undefined;
         user.resetPasswordExpire = undefined;
 
-       await user.save({ validateBeforeSave: false });
+        await user.save({ validateBeforeSave: false });
 
         return next(new ErrorHandler(error.message, 500))
     }
 
 })
 
-
-
-
-
 // Reset Password   =>  /api/v1/password/reset/:token
 exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 
-
     // Hash URL token
     const resetPasswordToken = crypto.createHash('sha256').update(req.params.token).digest('hex')
-  
-  
-
-
 
     const user = await User.findOne({
         resetPasswordToken,
         resetPasswordExpire: { $gt: Date.now() }
     })
-
-    console.log(resetPasswordToken);
 
     if (!user) {
         return next(new ErrorHandler('Password reset token is invalid or has been expired', 400))
@@ -139,19 +129,11 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
 
-
-
-
     await user.save();
-   
-
-
 
     sendToken(user, 200, res)
 
 })
-
-
 
 
 // Get currently logged in user details   =>   /api/v1/me
@@ -281,21 +263,23 @@ exports.updateUser = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
-// Delete user    =>   /api/v1/admin/user/:id
-exports.deleteUser= catchAsyncErrors(async (req, res, next) => {
+// Delete user   =>   /api/v1/admin/user/:id
+exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.params.id);
 
     if (!user) {
         return next(new ErrorHandler(`User does not found with id: ${req.params.id}`))
     }
 
+    // Remove avatar from cloudinary
+    const image_id = user.avatar.public_id;
+    await cloudinary.v2.uploader.destroy(image_id);
 
-    //Remove avtar from cloudinary - TODO
-    await user.deleteOne();
+    await user.remove();
 
     res.status(200).json({
         success: true,
-        user
     })
 })
 
+console.log(Date.now());

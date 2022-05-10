@@ -6,7 +6,7 @@
         "ratings" : 4.5,
         "images" : [{
             "public_id" : "products/dsvbpny402gelwugv2le",
-            "url" : "https://storage.googleapis.com/spares/images/parts/4BU7TDZSWT/1628857139.jpg"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735293/products/gome_q9kjdj.jpg"
         }],
         "category" : "Engine Oil",
        
@@ -21,11 +21,11 @@
         "ratings" : 1.65,
         "images" : [{
             "public_id" : "products/61oXGZ60GfL_fixco9",
-            "url" : "https://rukminim1.flixcart.com/image/416/416/kd3f3bk0/vehicle-tire/3/8/g/taximax1325218515088htmx0-185-65-r15-jk-tyre-original-imafu2hgucghetyb.jpeg?q=70"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735289/products/tyre2_zpzm0u.webp"
         },
         {
             "public_id" : "products/61oXGZ60GfL_fixc10",
-            "url" : "https://rukminim1.flixcart.com/image/416/416/kd3f3bk0/vehicle-tire/3/8/g/taximax1325218515088htmx0-185-65-r15-jk-tyre-original-imafu2hgmtmgguba.jpeg?q=70"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735289/products/tyre1_haoitp.webp"
         }],
         "category" : "Tyres",
        
@@ -40,7 +40,7 @@
         "ratings" : 3.5,
         "images" : [{
             "public_id" : "products/chairmount_nuubea",
-            "url" : "https://storage.googleapis.com/spares/images/parts/D4NRGERKWD/1621174021.jpg"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735289/products/helex_gt6gd7.jpg"
         }],
         "category" : "Engine Oil",
        
@@ -55,7 +55,7 @@
         "ratings" : 5,
         "images" : [{
             "public_id" : "products/headphones_t2afnb",
-            "url" : "https://m.media-amazon.com/images/I/31onO-KQ5hL.jpg"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735288/products/exide_zycl3g.jpg"
         }],
                 
                 
@@ -73,7 +73,7 @@
         "ratings" : 4,
         "images" : [{
             "public_id" : "products/airpords_e5cqqr",
-            "url" : "https://images-eu.ssl-images-amazon.com/images/I/51jWaTsIYEL._SX300_SY300_QL70_FMwebp_.jpg"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735681/products/tata_green_batteries_yv3cf8.webp"
         }],
         "category" : "Battery",
        
@@ -88,11 +88,11 @@
         "ratings" : 4,
         "images" : [{
             "public_id" : "products/eahhtj1bkn1k9gjgd3hn",
-            "url" : "https://m.media-amazon.com/images/I/51+Kh6CWNJL._SX450_.jpg"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735288/products/eltron_light_bmvagb.jpg"
         },
         {
             "public_id" : "products/eahhtj1bkn1k9gjgd321",
-            "url" : "https://m.media-amazon.com/images/I/41dHcdWuJwL._SX450_.jpg"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735288/products/eltron_light_2_njwv4v.jpg"
         }
     ],
         "category" : "Head Lamp",
@@ -108,7 +108,7 @@
         "ratings" : 4.7,
         "images" : [{
             "public_id" : "products/camera_ridc0i",
-            "url" : "https://storage.googleapis.com/spares/images/parts/0FS5078C7P/1625122304.jpg"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735288/products/bosch_brake_disk_dkweyt.jpg"
         }],
         "category" : "Accessories",
        
@@ -123,7 +123,7 @@
         "ratings" : 4.9,
         "images" : [{
             "public_id" : "products/macbook_o2cj2k",
-            "url" : "https://storage.googleapis.com/spares/images/parts/GMS22954576/1631784466.jpg"
+            "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735288/products/gasket_kit_Engine_w105ub.jpg"
         }],
         "category" : "Engine",  
     
@@ -140,11 +140,32 @@
         "images" : [
             {
                 "public_id" : "products/wmoa49q9e70ze9xtcra2",
-                "url" : "https://storage.googleapis.com/spares/images/parts/AQ4FZF1AKA/1641984434.jpg"
+                "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735291/products/wheel_Assy_streering_1_yhyy6v.png"
             },
             {
                 "public_id" : "products/i0k1wdwi5hrpmzwxvsds",
-                "url" : "https://storage.googleapis.com/spares/images/parts/AQ4FZF1AKA/1641984458.jpg" 
+                "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735291/products/wheel_Assy_Steering_2_x9vv4k.png" 
+            }
+            
+    ],
+        "category" : "Steering Wheels",
+        "stock" : 500,
+        "numOfReviews" : 1,
+        "reviews": []
+    },
+    {
+        "name" : "WHEEL ASSY STEERING",
+        "price" : "1000",
+        "description" : "The Wheel Assy Steering offered by Mgp is of industrial-grade quality and is compatible with all major cars. This Wheel Assy Steering is available at a competitive price of ₹1421 and is sold by our trusted seller, Parcit. The delivery is available PAN-India.",
+        "ratings" : 5,
+        "images" : [
+            {
+                "public_id" : "products/wmoa49q9e70ze9xtcra2",
+                "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735291/products/wheel_Assy_streering_1_yhyy6v.png"
+            },
+            {
+                "public_id" : "products/i0k1wdwi5hrpmzwxvsds",
+                "url" : "https://res.cloudinary.com/autoshop/image/upload/v1646735291/products/wheel_Assy_Steering_2_x9vv4k.png" 
             }
             
     ],
